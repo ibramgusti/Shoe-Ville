@@ -1,0 +1,143 @@
+.navbar{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header-navbar-one{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    margin: 0 29px;
+  }
+  
+  .logo-brand{
+    display: flex;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25.6911px;
+    line-height: 39px;
+    padding: 4px 8px;
+  }
+  
+  .logo-brand a{
+    margin: 0 5px 0 0 ;
+    text-decoration: none;
+    color: #000000;
+  }
+  
+  .nav-links{
+    list-style: none;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding-inline-start: 0;
+    margin: 0;
+  }
+  
+  .nav-links a{
+    text-decoration: none;
+    color: #000000;
+  }
+  
+  .nav-links li {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 21px;
+    line-height: 31px;
+    padding: 8px;
+    margin: 0 16px;
+  }
+  
+  .nav-buttons{
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 8px
+  }
+  
+  .nav-buttons button{
+    padding: 8px 16px;
+    background-color: white;
+    border: 1px solid #000000;
+    font-family: 'Poppins';
+    margin: 0 12px;
+  /* box-sizing: border-box; */
+    border-radius: 8px; 
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .nav-buttons .active{
+    background-color: #000000;
+    color: white;
+  }
+
+  .nav-burger{
+      display: none;
+      align-items: center;
+  }
+
+  .nav-burger svg{
+      width: 24px;
+      height: 24px;
+  }
+
+  .profil-img{
+    display: none;
+    align-self: center;
+  }
+
+  .profil-img svg{
+    width: 35px;
+    height: 35px;
+  }
+
+  .clickNavbar{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 62px;
+    z-index: 3;
+    background-color: #f3f3f3;
+  }
+
+  .clickNavbar a{
+    margin: 5px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: 1200px) {
+      .nav-links li{
+          margin: 5px;
+      }
+  }
+
+  @media screen and (max-width: 992px) {
+      .header-navbar-one{
+        margin: 0;
+        padding: 8px 16px;
+      }
+      .navigation{
+          display: none;
+      }
+      
+      .profil-img{
+        display: flex;
+      }
+
+      .nav-burger{
+          display: flex;
+      }
+
+      .nav-buttons{
+        display: none;
+      }
+  }

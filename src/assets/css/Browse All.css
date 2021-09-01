@@ -1,0 +1,199 @@
+.container-search{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.container-search p{
+    text-align: center;
+    font-weight: 600;
+    font-size: 30px;
+    color: white;
+}
+
+input, #searchButton{
+    min-height: 39px;
+    border: 0;
+}
+
+input{
+    padding: 8px 20px;
+    border-radius: 8px 0 0 8px;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'sans-serif';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    width: 100%;
+}
+
+#searchButton{
+    min-width: 39px;
+    border-radius: 0 25% 25% 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+#searchButton svg{
+    min-width: 15.5px;
+    min-height: 15.5px;
+}
+
+.div-search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+form{
+    width: 70%;
+    max-width: 1021px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.sorting{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0px;
+}
+
+.container-category{
+    display: flex;
+    color: white;
+    margin-left: 8px;
+}
+
+.category-list{
+    margin : 0 8px;
+    font-weight: normal;
+    font-size: 15px;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 16px;
+    padding: 8px 16px;
+}
+
+.sortOption{
+    background: #FFFFFF;
+    border-radius: 16px;
+    /* min-width: 175px; */
+    padding: 8px 15.5px;
+    margin: 0 8px;
+}
+
+.sortOption option{
+    font-size: 15px;
+    color: #000000;
+}
+
+.filter{
+    width: 40px;
+    height: 40px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    border-radius: 8px;
+    margin-left: 4px;
+}
+
+.filter svg{
+    width: 20px;
+    transform: rotateZ(90deg);
+    /* filter: invert(1); */
+}
+
+.container-cards{
+    display: flex;
+    justify-content: center;
+}
+
+.wrap-cards{
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content: space-evenly;
+    padding: 15px 0;
+}
+
+.allCards{
+    position: relative;
+    margin: 15px;
+    min-width: 205px;
+    box-sizing: border-box;
+    padding: 12px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.allCards img{
+    max-width: 164px;
+    align-self: center;
+}
+.allCards svg {
+    filter: invert(1);
+    width: 22px;
+    height: 20px;
+}
+
+.allCards h4{
+    font-weight: 600;
+    font-size: 19px;
+    /* line-height: 28px; */
+    margin: 0;
+    color: #FFFFFF;
+}
+
+.shoesCategory{
+    margin: 0;
+    font-size: 12px;
+    color: #FFFFFF;
+}
+
+.price{
+    font-weight: normal;
+    font-size: 15px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+@media screen and (max-width: 992px) {
+    form{
+        margin-right: 4px;
+    }
+    .sorting{
+        display: none;
+    }
+
+    .filter{
+        display: flex;
+    }
+
+    .div-search{
+        margin-bottom: 20px;
+    }
+
+    .allCards{
+        margin: 8px;
+        min-width: unset;
+        max-width: 160px;
+    }
+
+    .shoesCategory{
+        display: none;
+    }
+
+    .allCards img{
+        max-width: 135px;
+    }
+}

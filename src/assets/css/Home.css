@@ -1,0 +1,459 @@
+.jumbotron{
+    padding: 38px 45px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 637px;
+    box-sizing: border-box;
+}
+
+.container-jumbotron{
+    max-height: 637px;
+    position: relative;
+    background-color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title{
+    margin: 0 8px;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+.poClass{
+    font-weight: 600;
+    max-width: 415px;
+}
+
+.po{
+    margin: 23px 0;
+}
+
+.Desc{
+    font-size: 19px;
+    line-height: 28px;
+}
+
+.Date{
+    font-size: 28px;
+}
+
+#poButton{
+    cursor: pointer;
+    padding: 9.5px 19px;
+    background: white;
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 19px;
+}
+
+.container-release{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-poItem{
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+}
+
+.container-poItem img {
+    position: absolute;
+    max-width: 940px;
+    left: 400px;
+    transform: translate(30px, 70px);
+}
+
+.brandName{
+    margin: 0;
+    font-weight: bold;
+    font-size: 190px;
+    color: #FFFFFF;
+    opacity: 0.4;
+    transform: translate(-450px, 20px);
+}
+
+.shoeName{
+    font-weight: 500;
+    font-size: 142px;
+    margin: 0;
+    color: #FFFFFF;
+    transform: translate(-120px, 50px);
+}
+
+.cards{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: auto;
+    overflow-y: clip;
+    min-height: 300px;
+}
+
+.newCard{
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    max-width: 448px;
+    min-width: 448px;
+    min-height: 298px;
+    margin: 32px 12px;
+    padding: 0 12px 23px 12px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 26px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.newCard img{
+    position: absolute;
+    right: 10px;
+    top: 30px;
+}
+
+.card-header{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.on{
+    display: none;
+}
+
+.brandName-new{
+    margin: 0;
+    font-weight: bold;
+    font-size: 70px;
+    color: #FFFFFF;
+    opacity: 0.4;
+}
+
+.Date-new{
+    font-size: 21px;
+    font-weight: 600;
+    color: #FFFFFF;
+    opacity: 0.8;
+}
+
+.shoeName-new{
+    margin: 0;
+    color: white;
+    font-weight: 600;
+    font-size: 50px;
+}
+
+.bestSeller{
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+    min-height: 385px;
+    justify-content: space-between;
+}
+
+.bs-card{
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    max-width: 448px;
+    min-width: 448px;
+    min-height: 221px;
+    margin: 32px 12px 0 12px;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 26px;
+    justify-content: space-between;
+}
+
+.bs-card img{
+    position: absolute;
+    top: -80px;
+    left: 90px;
+    overflow: visible;
+    z-index: 2;
+}
+
+.bsBrand{
+    margin: 0;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 70px;
+    color: #FFFFFF;
+    opacity: 0.4;
+}
+
+.bsShoe{
+    margin: 0;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 60px;
+    color: #FFFFFF;
+    text-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);
+    text-align: end;
+}
+
+.theBrand{
+    display: none;
+    flex-direction: column;
+}
+
+.brandList{
+    display: flex;
+    align-items: center;
+    margin: 18px 8px;
+    overflow: auto;
+    /* max-width: 375px; */
+}
+
+
+.brandList img{
+    max-width: 95px;
+    margin-right: 22px;
+}
+
+.categoryList{
+    margin: 16px 0;
+    display: none;
+    flex-direction: column;
+    overflow-x: auto;
+    min-height: 88px;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 1420px) {
+    .cards{
+        justify-content: flex-start;
+    }
+
+    .bestSeller{
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 1375px) {
+    .container-poItem img{
+        width: 740px;
+    }
+
+    .brandName{
+        transform: translate(-350px, 20px);
+    }
+
+    .container-poItem img{
+        transform: translate(60px, 100px);
+    }
+    .shoeName{
+        transform: translate(-120px, 30px);
+        font-size: 130px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .container-poItem img{
+        width: 520px;
+    }
+
+    .brandName{
+        font-size: 140px;
+        transform: translate(-380px, -40px);
+    }
+
+    .container-poItem img{
+        transform: translate(60px, 50px);
+    }
+    .shoeName{
+        transform: translate(-180px, 0px);
+        font-size: 80px;
+    }
+
+    .shoeName-new, .bsShoe{
+        font-size: 50px;
+        /* line-height: 34px; */
+    }
+
+    .brandName-new, .bsBrand{
+        font-size: 75px;
+    }
+    
+    .cards{
+        justify-content: flex-start;
+    }
+
+    .newCard{
+        min-height: 258px;
+    }
+
+    .newCard img{
+        width: 383px;
+        top: 35px;
+        right: 60px;
+    }
+
+    .bs-card{
+        min-height: 201px;
+    }
+
+    .bs-card img{
+        width: 312px;
+        left: 140px;
+
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .brandName{
+        font-size: 140px;
+        transform: translate(-320px, -40px);
+    }
+
+    .container-poItem img{
+        transform: translate(30px, 50px);
+    }
+
+    .shoeName{
+        transform: translate(-140px, 0px);
+        font-size: 80px;
+    }
+}
+@media screen and (max-width: 992px) {
+    .container-jumbotron{
+        display: none;
+    }
+
+    .on{
+        display: block;
+    }
+
+    .bestSeller{
+        padding: 0;
+    }
+
+    .shoeName-new{
+        font-size: 37px;
+        line-height: 34px;
+    }
+
+    .bsShoe{
+        font-size: 37px;
+        text-align: center;
+    }
+
+    .brandName-new{
+        font-size: 57px;
+    }
+    
+    .bsBrand{
+        font-size: 57px;
+        text-align: end;
+        transform: translate(0, 60px);
+    }
+
+    .Date-new{
+        display: none;
+    }
+
+    .bs-card, .newCard{
+        margin: 32px 8px;
+    }
+
+    .bs-card{
+        min-width: 358px;
+    }
+
+    .bs-card img{
+        width: 282px;
+        left: 30px;
+    }
+
+    .newCard{
+        min-height: 208px;
+        min-width: 351px;
+    }
+
+    .newCard img{
+        width: 333px;
+        top: 10px;
+        right: 20px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .title{
+        font-size: 21px;
+    }
+
+    .cards{
+        min-height: fit-content;
+    }
+
+    .newCard{
+        min-width: 271px;
+        min-height: 130px;
+        border-radius: 16px;
+        padding: 0px 12px;
+        margin: 16px 8px;
+    }
+
+    .newCard img{
+        width: 213px;
+        top: 10px;
+        right: 35px;
+    }
+    .shoeName-new{
+        font-size: 23px;
+        line-height: 34px;
+    }
+
+    .brandName-new{
+        font-size: 40px;
+    }
+
+    .Date-new{
+        display: none;
+    }
+    
+    .bs-card{
+        margin: 32px 8px 0 8px;
+        min-width: 165px;
+        min-height: 83px;
+        border-radius: 16px;
+    }
+    
+    .bs-card img{
+        width: 131px;
+        top: -40px;
+        left: 20px;
+    }
+
+    .bsBrand{
+        font-size: 21px;
+        text-align: end;
+        transform: translate(5px, 30px);
+    }
+
+    .bsShoe{
+        text-align: center;
+        font-size: 17px;
+    }
+
+    .bestSeller{
+        min-height: 166px;
+    }
+
+    .theBrand{
+        display: flex;
+    }
+
+    .categoryList{
+        display: flex;
+    }
+}
+
