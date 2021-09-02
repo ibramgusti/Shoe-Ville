@@ -94,6 +94,7 @@
     overflow: auto;
     overflow-y: clip;
     min-height: 300px;
+    padding-bottom: 20px;
 }
 
 .newCard{
@@ -156,6 +157,8 @@
     flex-direction: column;
     min-height: 385px;
     justify-content: space-between;
+    max-width: 1392px;
+    margin: auto;
 }
 
 .bs-card{

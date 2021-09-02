@@ -1,20 +1,17 @@
 //libraries
 import React, { Component } from 'react'
 import { GoSettings } from "react-icons/go";
-import { GlobalConsumer } from '../Context/Context';
 
 //components
+import { GlobalConsumer } from '../Context/Context';
 import Category from './Category';
 import SearchInput from './SearchInput';
 import SortOption from './SortOption';
 
 export class Search extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            sortBy: ['Cheapest', 'Most Expensive', 'Newest', 'Oldest'],
-            brands: ['Nike', 'Puma', 'New Balance', 'Adidas'],
-        }
+    state = {
+        sortBy: ['All', 'Cheapest', 'Most Expensive'],
+        brands: ['All', 'Nike', 'Puma', 'New Balance', 'Adidas'],
     }
 
     handleChange = (e) => {
@@ -22,6 +19,7 @@ export class Search extends Component {
             search: e.target.value
         })
     }
+
     render() {
         return (
             <div className='container-search'>
@@ -33,8 +31,10 @@ export class Search extends Component {
                     </div>
                 </div>
                 <div className='sorting'>
-                    <SortOption sortBy={this.state.sortBy} />
-                    <SortOption sortBy={this.state.brands} />
+                    <SortOption sortBy={this.state.sortBy} filter={this.props.state.filterSort} handleFilter={this.props.dispatch({ type: 'HANDLE_SORT' })} />
+                    {/* <SortOption sortBy={this.state.sortBy} handleFilter={this.props.handleFilter} filter={this.props.state.filterSort} /> */}
+                    <SortOption sortBy={this.state.brands} handleFilter={this.props.dispatch({ type: 'HANDLE_SORT_BRAND' })
+                    } />
                     <Category />
                 </div>
             </div>
