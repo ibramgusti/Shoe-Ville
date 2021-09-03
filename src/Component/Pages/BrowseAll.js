@@ -33,43 +33,7 @@ export class BrowseAll extends Component {
         if (e.target.value === 'All') {
             window.location.reload()
         }
-
-        // if (e.target.value === 'Nike') {
-        //     return prices.filter(val => {
-        //         return (val.brand.includes(e.target.value))
-        //     })
-        //     this.props.dispatch({ type: 'HANDLE_SORT_BRAND' })
-        //     console.log(this.props.state);
-        // }
-
-        // if (e.target.value === 'Adidas') {
-        //     prices.filter(val => {
-        //         if (val.brand.includes(e.target.value)) {
-        //             console.log(val);
-        //             return val
-        //         }
-        //     })
-        // }
-
-        // if (e.target.value === 'New Balance') {
-        //     prices.filter(val => {
-        //         if (val.brand.includes(e.target.value)) {
-        //             console.log(val);
-        //             return val
-        //         }
-        //     })
-        // }
-
-        // if (e.target.value === 'Puma') {
-        //     prices.filter(val => {
-        //         if (val.brand.includes(e.target.value)) {
-        //             console.log(val);
-        //             return val
-        //         }
-        //     })
-        // }
     }
-
 
     render() {
         return (

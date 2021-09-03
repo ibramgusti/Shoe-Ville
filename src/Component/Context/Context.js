@@ -9,23 +9,23 @@ const GlobalProvider = (ChildrenComp) => {
         class Context extends Component {
             sourceShoes = [
                 { id: 0, name: 'Zoom Rize 2', brand: 'Adidas', isLike: false, category: 'Basket', price: 2389000, bg: 'linear-gradient(rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #FB6A72' },
-                { id: 1, name: 'Dunk Low Ceramic', brand: 'Puma', isLove: false, category: 'Lifestyle', price: 2220000, bg: 'linear-gradient(rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #F7A66E' },
-                { id: 2, name: 'AF1 x Off White', brand: 'Nike', isLove: false, category: 'Lifestyle', price: 2999000, bg: 'linear-gradient(rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #ADDC89' },
-                { id: 3, name: 'Jordan Retro', brand: 'Nike', isLove: false, category: 'Basket', price: 5679000, bg: 'linear-gradient(rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #FFD566' },
-                { id: 4, name: 'Metcon 6 By You', brand: 'Nike', isLove: false, category: 'Training', price: 2279000, bg: 'linear-gradient(0deg, rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #A58CD9' },
-                { id: 5, name: 'React Vision', brand: 'Nike', isLove: false, category: 'Lifestyle', price: 3345000, bg: 'linear-gradient(0deg, rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #69B6FC' },
+                { id: 1, name: 'Dunk Low Ceramic', brand: 'Puma', isLike: false, category: 'Lifestyle', price: 2220000, bg: 'linear-gradient(rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #F7A66E' },
+                { id: 2, name: 'AF1 x Off White', brand: 'Nike', isLike: false, category: 'Lifestyle', price: 2999000, bg: 'linear-gradient(rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #ADDC89' },
+                { id: 3, name: 'Jordan Retro', brand: 'Nike', isLike: false, category: 'Basket', price: 5679000, bg: 'linear-gradient(rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #FFD566' },
+                { id: 4, name: 'Metcon 6 By You', brand: 'Nike', isLike: false, category: 'Training', price: 2279000, bg: 'linear-gradient(0deg, rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #A58CD9' },
+                { id: 5, name: 'React Vision', brand: 'Nike', isLike: false, category: 'Lifestyle', price: 3345000, bg: 'linear-gradient(0deg, rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #69B6FC' },
                 { id: 6, name: 'Zoom Rize 2', brand: 'Nike', isLike: false, category: 'Basket', price: 2389000, bg: 'linear-gradient(rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #FB6A72' },
-                { id: 7, name: 'Dunk Low Ceramic', brand: 'Nike', isLove: false, category: 'Lifestyle', price: 2220000, bg: 'linear-gradient(rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #F7A66E' },
-                { id: 8, name: 'AF1 x Off White', brand: 'Nike', isLove: false, category: 'Lifestyle', price: 2999000, bg: 'linear-gradient(rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #ADDC89' },
-                { id: 9, name: 'Jordan Retro', brand: 'Nike', isLove: false, category: 'Basket', price: 5679000, bg: 'linear-gradient(rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #FFD566' },
-                { id: 10, name: 'Metcon 6 By You', brand: 'Nike', isLove: false, category: 'Training', price: 2279000, bg: 'linear-gradient(0deg, rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #A58CD9' },
-                { id: 11, name: 'React Vision', brand: 'Nike', isLove: false, category: 'Lifestyle', price: 3345000, bg: 'linear-gradient(0deg, rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #69B6FC' },
+                { id: 7, name: 'Dunk Low Ceramic', brand: 'Nike', isLike: false, category: 'Lifestyle', price: 2220000, bg: 'linear-gradient(rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #F7A66E' },
+                { id: 8, name: 'AF1 x Off White', brand: 'Nike', isLike: false, category: 'Lifestyle', price: 2999000, bg: 'linear-gradient(rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #ADDC89' },
+                { id: 9, name: 'Jordan Retro', brand: 'Nike', isLike: false, category: 'Basket', price: 5679000, bg: 'linear-gradient(rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #FFD566' },
+                { id: 10, name: 'Metcon 6 By You', brand: 'Nike', isLike: false, category: 'Training', price: 2279000, bg: 'linear-gradient(0deg, rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #A58CD9' },
+                { id: 11, name: 'React Vision', brand: 'Nike', isLike: false, category: 'Lifestyle', price: 3345000, bg: 'linear-gradient(0deg, rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #69B6FC' },
                 { id: 12, name: 'Zoom Rize 2', brand: 'Nike', isLike: false, category: 'Basket', price: 2389000, bg: 'linear-gradient(rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #FB6A72' },
-                { id: 13, name: 'Dunk Low Ceramic', brand: 'Nike', isLove: false, category: 'Lifestyle', price: 2220000, bg: 'linear-gradient(rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #F7A66E' },
-                { id: 14, name: 'AF1 x Off White', brand: 'Nike', isLove: false, category: 'Lifestyle', price: 2999000, bg: 'linear-gradient(rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #ADDC89' },
-                { id: 15, name: 'Jordan Retro', brand: 'Nike', isLove: false, category: 'Basket', price: 5679000, bg: 'linear-gradient(rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #FFD566' },
-                { id: 16, name: 'Metcon 6 By You', brand: 'Nike', isLove: false, category: 'Training', price: 2279000, bg: 'linear-gradient(0deg, rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #A58CD9' },
-                { id: 17, name: 'React Vision', brand: 'Nike', isLove: false, category: 'Lifestyle', price: 3345000, bg: 'linear-gradient(0deg, rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #69B6FC' },
+                { id: 13, name: 'Dunk Low Ceramic', brand: 'Nike', isLike: false, category: 'Lifestyle', price: 2220000, bg: 'linear-gradient(rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #F7A66E' },
+                { id: 14, name: 'AF1 x Off White', brand: 'Nike', isLike: false, category: 'Lifestyle', price: 2999000, bg: 'linear-gradient(rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #ADDC89' },
+                { id: 15, name: 'Jordan Retro', brand: 'Nike', isLike: false, category: 'Basket', price: 5679000, bg: 'linear-gradient(rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #FFD566' },
+                { id: 16, name: 'Metcon 6 By You', brand: 'Nike', isLike: false, category: 'Training', price: 2279000, bg: 'linear-gradient(0deg, rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #A58CD9' },
+                { id: 17, name: 'React Vision', brand: 'Nike', isLike: false, category: 'Lifestyle', price: 3345000, bg: 'linear-gradient(0deg, rgba(0, 0, 0, 0.2) -0.11%, rgba(255, 255, 255, 0) 100%), #69B6FC' },
             ]
             state = {
                 shoes: this.sourceShoes,
@@ -101,6 +101,21 @@ const GlobalProvider = (ChildrenComp) => {
                         }
                     }
                     return handleSortBrand
+                }
+
+                //Still Fixing..
+                if (action.type === 'HANDLE_LIKE') {
+                    const handleLike = () => {
+                        console.log(action.index);
+                        console.log(this.state.shoes[action.index].id);
+                        this.setState(prevState => ({
+                            shoes: prevState.shoes.map(
+                                obj => (obj.id === action.index ? Object.assign(obj, { isLike: true }) : obj)
+                                // obj => (obj.id == action.index ? Object.assign(obj, { isLike: true }) : obj)
+                            )
+                        }))
+                    }
+                    return handleLike
                 }
             }
             render() {

@@ -22,6 +22,10 @@ export class Detail extends Component {
         }
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        console.log(this.props.state.shoes[0].isLike);
+    }
+
 
     render() {
         const id = this.props.match.params.shoesID
@@ -52,10 +56,9 @@ export class Detail extends Component {
                     </div>
                     <div className='detail-buttons'>
                         <button id='addCart'>Add to Cart</button>
-                        <button id='addWish'>{<AiOutlineHeart />}</button>
+                        <button id='addWish' onClick={this.props.dispatch({ type: 'HANDLE_LIKE', index: id })}>{<AiOutlineHeart />}</button>
                     </div>
                 </div>
-                {/* <p>{shoesData.category}</p> */}
             </div>
 
         )
