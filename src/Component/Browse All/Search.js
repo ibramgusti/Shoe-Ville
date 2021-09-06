@@ -33,7 +33,7 @@ export class Search extends Component {
                 <div className='sorting'>
                     <SortOption sortBy={this.state.sortBy} filter={this.props.state.filterSort} handleFilter={this.props.dispatch({ type: 'HANDLE_SORT' })} />
                     {/* <SortOption sortBy={this.state.sortBy} handleFilter={this.props.handleFilter} filter={this.props.state.filterSort} /> */}
-                    <SortOption sortBy={this.state.brands} handleFilter={this.props.dispatch({ type: 'HANDLE_SORT_BRAND' })
+                    <SortOption sortBy={this.state.brands} filter={this.props.state.sortedBrand} handleFilter={this.props.dispatch({ type: 'HANDLE_SORT_BRAND' })
                     } />
                     <Category />
                 </div>

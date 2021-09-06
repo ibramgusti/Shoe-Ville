@@ -82,7 +82,7 @@ form{
     padding: 8px 16px;
 }
 
-.sortOption{
+#sortOption{
     background: #FFFFFF;
     border-radius: 16px;
     /* min-width: 175px; */
@@ -90,7 +90,7 @@ form{
     margin: 0 8px;
 }
 
-.sortOption option{
+#sortOption option{
     font-size: 15px;
     color: #000000;
 }

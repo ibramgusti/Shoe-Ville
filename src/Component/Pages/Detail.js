@@ -1,6 +1,5 @@
 //libraries
 import React, { Component } from 'react'
-import { AiOutlineHeart } from "react-icons/ai";
 
 //component
 // import SearchInput from '../Browse All/SearchInput';
@@ -21,11 +20,6 @@ export class Detail extends Component {
             size: [39, 40, 41, 42, 43]
         }
     }
-
-    componentDidUpdate(prevProps, prevState) {
-        console.log(this.props.state.shoes[0].isLike);
-    }
-
 
     render() {
         const id = this.props.match.params.shoesID
@@ -55,8 +49,8 @@ export class Detail extends Component {
                         <p>The Air Jordan 1 Mid Shoe is inspired by the first AJ1, offering fans of Jordan retros a chance to follow in the footsteps of greatness.</p>
                     </div>
                     <div className='detail-buttons'>
-                        <button id='addCart'>Add to Cart</button>
-                        <button id='addWish' onClick={this.props.dispatch({ type: 'HANDLE_LIKE', index: id })}>{<AiOutlineHeart />}</button>
+                        <button id='addCart' onClick={this.props.dispatch({ type: 'HANDLE_CART', shoes: { name: shoesData.name, price: shoesData.price } })}>Add to Cart</button>
+                        <button id='addWish' onClick={this.props.dispatch({ type: 'HANDLE_LIKE', index: id })}>{this.props.dispatch({ type: 'LIKE_CLICKED', index: id })}</button>
                     </div>
                 </div>
             </div>

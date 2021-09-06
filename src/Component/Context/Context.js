@@ -1,5 +1,7 @@
 // import React from 'react'
 import React, { Component, createContext } from 'react'
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+
 
 const RootContext = createContext();
 const Provider = RootContext.Provider
@@ -103,19 +105,47 @@ const GlobalProvider = (ChildrenComp) => {
                     return handleSortBrand
                 }
 
-                //Still Fixing..
+
                 if (action.type === 'HANDLE_LIKE') {
                     const handleLike = () => {
-                        console.log(action.index);
-                        console.log(this.state.shoes[action.index].id);
-                        this.setState(prevState => ({
-                            shoes: prevState.shoes.map(
-                                obj => (obj.id === action.index ? Object.assign(obj, { isLike: true }) : obj)
-                                // obj => (obj.id == action.index ? Object.assign(obj, { isLike: true }) : obj)
-                            )
-                        }))
+                        if (this.state.shoes[action.index].isLike) {
+                            this.setState({
+                                shoes: this.state.shoes.map(
+                                    (obj, index) => (index === parseInt(action.index) ? Object.assign(obj, { isLike: false }) : obj)
+
+                                )
+                            })
+                        } else {
+                            this.setState({
+                                shoes: this.state.shoes.map(
+                                    (obj, index) => (index === parseInt(action.index) ? Object.assign(obj, { isLike: true }) : obj)
+                                    // obj => (obj.id == action.index ? Object.assign(obj, { isLike: true }) : obj)
+                                )
+                            })
+                        }
                     }
                     return handleLike
+                }
+                if (action.type === 'LIKE_CLICKED') {
+                    if (this.state.shoes[parseInt(action.index)].isLike) {
+                        return <AiFillHeart />
+                    } else {
+                        return <AiOutlineHeart />
+
+                    }
+                }
+
+                if (action.type === 'HANDLE_CART') {
+                    const cart = () => {
+                        let size = document.getElementById('sortOption').value
+                        action.shoes.size = size
+                        // this.state.cart.push(action.shoes)
+                        let join = this.state.cart.concat(action.shoes)
+                        this.setState({
+                            cart: join
+                        })
+                    }
+                    return cart
                 }
             }
             render() {

@@ -1,6 +1,5 @@
 //libraries
 import React, { Component } from 'react'
-import { AiOutlineHeart } from 'react-icons/ai'
 
 //component
 import { GlobalConsumer } from '../Context/Context'
@@ -22,7 +21,7 @@ export class ShoesCards extends Component {
             }).map((el, index) => {
                 return (
                     <div className='allCards' style={{ background: el.bg }} key={index} onClick={() => this.props.handleDetail(index)}>
-                        <AiOutlineHeart />
+                        {this.props.dispatch({ type: 'LIKE_CLICKED', index: index })}
                         <img src={`/shoes/${el.name}.png`} alt={el.name} />
                         <p className='shoesCategory'>{el.category}</p>
                         <h4>{el.name}</h4>
