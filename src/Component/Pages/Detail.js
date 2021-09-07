@@ -21,12 +21,16 @@ export class Detail extends Component {
         }
     }
 
+    handleCart = () => {
+        this.props.history.push('/cart')
+    }
+
     render() {
         const id = this.props.match.params.shoesID
         const shoesData = this.props.state.shoes[id]
         return (
             <div className='container-detail' style={{ background: shoesData.bg }}>
-                <HeaderDetail />
+                <HeaderDetail handleCart={this.handleCart} />
                 {/* <SearchInput /> */}
                 <div className='shoes-content'>
                     <img src={`/shoes/${shoesData.name}.png`} alt={shoesData.name} />
@@ -49,7 +53,7 @@ export class Detail extends Component {
                         <p>The Air Jordan 1 Mid Shoe is inspired by the first AJ1, offering fans of Jordan retros a chance to follow in the footsteps of greatness.</p>
                     </div>
                     <div className='detail-buttons'>
-                        <button id='addCart' onClick={this.props.dispatch({ type: 'HANDLE_CART', shoes: { name: shoesData.name, price: shoesData.price } })}>Add to Cart</button>
+                        <button id='addCart' onClick={this.props.dispatch({ type: 'HANDLE_CART', shoes: { name: shoesData.name, price: shoesData.price, check: true } })}>Add to Cart</button>
                         <button id='addWish' onClick={this.props.dispatch({ type: 'HANDLE_LIKE', index: id })}>{this.props.dispatch({ type: 'LIKE_CLICKED', index: id })}</button>
                     </div>
                 </div>

@@ -147,6 +147,17 @@ const GlobalProvider = (ChildrenComp) => {
                     }
                     return cart
                 }
+
+                if (action.type === 'HANDLE_CHECK_ITEM') {
+                    const check = () => {
+                        this.setState({
+                            cart: this.state.cart.map((el, index) =>
+                                (index === parseInt(action.index)) ? Object.assign(el, { check: !el.check }) : el
+                            )
+                        })
+                    }
+                    return check
+                }
             }
             render() {
                 return (

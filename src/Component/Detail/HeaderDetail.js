@@ -1,8 +1,9 @@
 //libraries
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import { AiOutlineShoppingCart, AiOutlineLeft } from "react-icons/ai";
+import { AiOutlineLeft } from "react-icons/ai";
 import { GlobalConsumer } from '../Context/Context';
+import CartCount from './CartCount';
 
 const HeaderDetail = (props) => {
     let history = useHistory()
@@ -15,10 +16,7 @@ const HeaderDetail = (props) => {
         <div className='detail-header'>
             <AiOutlineLeft className='back-button' onClick={goBack} />
             <h3>{props.title}</h3>
-            <div className='cart-container'>
-                <AiOutlineShoppingCart />
-                <div className='cart-count'>{props.state.cart.length}</div>
-            </div>
+            <CartCount handleCart={props.handleCart} />
         </div>
     )
 }
