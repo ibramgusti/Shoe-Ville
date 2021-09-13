@@ -46,8 +46,28 @@
     flex-direction: column;
     width: 100%;
     background-color: white;
-    border-radius: 15px 15px 0 0;
     padding: 12px 16px;
+    border-radius: 15px;
+    margin: 20px;
+    flex-basis: 50%;
+}
+
+.shoes-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 50%;
+}
+
+.shoes-content img { 
+    max-width: 430px;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.container-all-detail {
+    display: flex;
+    width: 100%;
 }
 
 .shoes-size{
@@ -59,10 +79,10 @@
 }
 
 .invert{
-    max-height: 26px;
+    max-height: 50px;
     filter: invert(1);
     overflow-x: auto;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
 }
 
 .invert-two{
@@ -142,6 +162,24 @@
     font-size: 24px;
 }
 
+.detail-title h3 span{
+    font-weight: 500;
+    font-size: 15px;
+}
 
-@media screen and (min-width: 576px){
+@media screen and (max-width: 992px){
+    .container-all-detail {
+        flex-direction: column;
+    }
+
+    .main-detail {
+        border-radius: 15px 15px 0 0;
+        margin: 0;
+    }
+
+    .shoes-content img { 
+        max-width: 300px;
+        max-height: 200px;
+        object-fit: cover;
+    }
 }

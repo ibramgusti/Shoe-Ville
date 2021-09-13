@@ -8,13 +8,9 @@ import CartCount from './CartCount';
 const HeaderDetail = (props) => {
     let history = useHistory()
 
-    const goBack = () => {
-        history.push('/browseAll')
-    }
-
     return (
         <div className='detail-header'>
-            <AiOutlineLeft className='back-button' onClick={goBack} />
+            <AiOutlineLeft className='back-button' onClick={() => history.goBack()} />
             <h3>{props.title}</h3>
             <CartCount handleCart={props.handleCart} />
         </div>

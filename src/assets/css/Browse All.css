@@ -139,6 +139,8 @@ form{
 .allCards img{
     max-width: 164px;
     align-self: center;
+    min-height: 140px;
+    object-fit: contain;
 }
 .allCards svg {
     filter: invert(1);
@@ -195,5 +197,7 @@ form{
 
     .allCards img{
         max-width: 135px;
+        min-height: 150px;
+
     }
 }

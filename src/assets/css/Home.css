@@ -223,11 +223,12 @@
 }
 
 .categoryList{
-    margin: 16px 0;
+    max-width: 1392px;
+    margin: 20px auto;
     display: none;
     flex-direction: column;
     overflow-x: auto;
-    min-height: 88px;
+    min-height: 135px;
     justify-content: space-between;
 }
 
@@ -457,6 +458,8 @@
 
     .categoryList{
         display: flex;
+        min-height: 88px;
+
     }
 }
 

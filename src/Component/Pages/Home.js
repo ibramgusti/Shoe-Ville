@@ -8,55 +8,44 @@ import NewCard from "../Home/NewCard";
 import { BestSeller } from '../Home/BestSeller';
 import { BrandList } from '../Home/BrandList';
 import Category from '../Browse All/Category';
+import { GlobalConsumer } from '../Context/Context';
 
 //style
 import '../../assets/css/Home.css'
 
 export class Home extends Component {
+    handleClickck = (id) => {
+        this.props.history.push(`/detail/${id}`)
+    }
 
     render() {
-        const shoeRelease = [
-            // { brand: 'Nike', name: 'Dunk Low', date: '14/04/2021', bg: 'linear-gradient( rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 100%), linear-gradient( #F0DBC1, #F0DBC1)' },
-            { brand: 'Nike', name: 'Overbreak Khaki', date: '13/04/2021', bg: 'linear-gradient( rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 100%), linear-gradient( #F0DBC1, #F0DBC1)' },
-            { brand: 'Nike', name: 'Zoom Letter Bro', date: '17/04/2021', bg: 'linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 100%), #F9B9C3' },
-            { brand: 'Nike', name: 'Kobe 5x Champ', date: '19/04/2021', bg: 'linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 100%), #D2CCE6' },
-        ]
-        const bestSeller = [
-            // { brand: 'Nike', name: 'Dunk Low', date: '14/04/2021', bg: 'linear-gradient( rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 100%), linear-gradient( #F0DBC1, #F0DBC1)' },
-            { brand: 'Nike', name: 'Lebron 8', bg: 'linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.12) 100%), #8EA4D7' },
-            { brand: 'Adidas', name: 'Dame 7', bg: 'linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.12) 100%), #86C6DF' },
-            { brand: 'Adidas', name: 'D Rose 11', bg: 'linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.12) 100%), #9BCAB4' },
-        ]
+        const shoesData = this.props.state.shoes
         return (
             <section id='home'>
                 <div className='container-jumbotron'>
                     <div className='jumbotron'>
                         <p className='title'>New Release !</p>
-                        <PreorderDesc poDesc='Originally created for the hardwood, the Dunk later took to the streets—and as they say, the rest is history. ' poDate='14/04/2021' />
+                        <PreorderDesc handleClickPo={() => this.handleClickck(shoesData[shoesData.length - 1].id)} poDesc='Originally created for the hardwood, the Dunk later took to the streets—and as they say, the rest is history. ' poDate={shoesData[shoesData.length - 1].date} />
                     </div>
-                    <PreorderItems brand='NIKE' shoeName='Dunk Low' />
+                    <PreorderItems brand={shoesData[shoesData.length - 1].brand} shoeName={shoesData[shoesData.length - 1].name} />
 
                 </div>
                 <div className='container-release'>
                     <p className='title on'>New Release !</p>
                     <div className='cards'>
-                        {shoeRelease.map((el, index) => {
-                            return (
-                                <NewCard brand={el.brand} date={el.date} shoeName={el.name} bgColor={el.bg} key={index} />
-                            )
+                        {shoesData.map((el, index) => {
+                            return el.po && index < 24 ? <NewCard brand={el.brand} date={el.date} shoeName={el.name} bgColor={el.bg} key={index} handleClick={() => this.handleClickck(index)} /> : null
+
                         })}
                     </div>
                 </div>
                 <BrandList />
-                {/* <div className='brandList'></div> */}
                 <div className='bestSeller'>
                     <p className='title'>Best Seller</p>
                     <div className='cards'>
                         {
-                            bestSeller.map((el, index) => {
-                                return (
-                                    <BestSeller brandName={el.brand} shoeName={el.name} bg={el.bg} key={index} />
-                                )
+                            shoesData.map((el, index) => {
+                                return el.bestSeller ? <BestSeller brandName={el.brand} shoeName={el.name} bg={el.bg} key={index} handleClick={() => this.handleClickck(index)} /> : null
                             })
                         }
                     </div>
@@ -70,4 +59,4 @@ export class Home extends Component {
     }
 }
 
-export default Home
+export default GlobalConsumer(Home)

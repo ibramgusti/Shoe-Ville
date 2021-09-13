@@ -21,6 +21,11 @@ export class Detail extends Component {
         }
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        localStorage.setItem('cart', JSON.stringify(this.props.state.cart))
+    }
+
+
     handleCart = () => {
         this.props.history.push('/cart')
     }
@@ -32,31 +37,34 @@ export class Detail extends Component {
             <div className='container-detail' style={{ background: shoesData.bg }}>
                 <HeaderDetail handleCart={this.handleCart} />
                 {/* <SearchInput /> */}
-                <div className='shoes-content'>
-                    <img src={`/shoes/${shoesData.name}.png`} alt={shoesData.name} />
+                <div className='container-all-detail'>
+                    <div className='shoes-content'>
+                        <img src={`/shoes/${shoesData.name}.png`} alt={shoesData.name} />
+                    </div>
+                    <div className='main-detail'>
+                        <div className='detail-title'>
+                            <h3>{shoesData.name} <span>{shoesData.poLong ? `(Pre-Order ${shoesData.poLong} Days)` : null}</span></h3>
+                            <p>Rp. {shoesData.price}</p>
+                        </div>
+                        <div className='shoes-size'>
+                            <h5>Size</h5>
+                            <SortOption sortBy={this.state.size} />
+                        </div>
+                        <div className='detail-content'>
+                            <h5>Category</h5>
+                            <Category calssdiv='invert' classList='invert-two' />
+                        </div>
+                        <div className='detail-content'>
+                            <h5>Description</h5>
+                            <p>The Air Jordan 1 Mid Shoe is inspired by the first AJ1, offering fans of Jordan retros a chance to follow in the footsteps of greatness.</p>
+                        </div>
+                        <div className='detail-buttons'>
+                            <button id='addCart' onClick={this.props.dispatch({ type: 'HANDLE_CART', shoes: { name: shoesData.name, price: shoesData.price, check: true, poLong: shoesData.poLong } })}>{shoesData.po ? `Pre-Order` : `Add to Cart`}</button>
+                            <button id='addWish' onClick={this.props.dispatch({ type: 'HANDLE_LIKE', index: id })}>{this.props.dispatch({ type: 'LIKE_CLICKED', index: id })}</button>
+                        </div>
+                    </div>
                 </div>
-                <div className='main-detail'>
-                    <div className='detail-title'>
-                        <h3>{shoesData.name}</h3>
-                        <p>Rp. {shoesData.price}</p>
-                    </div>
-                    <div className='shoes-size'>
-                        <h5>Size</h5>
-                        <SortOption sortBy={this.state.size} />
-                    </div>
-                    <div className='detail-content'>
-                        <h5>Category</h5>
-                        <Category calssdiv='invert' classList='invert-two' />
-                    </div>
-                    <div className='detail-content'>
-                        <h5>Description</h5>
-                        <p>The Air Jordan 1 Mid Shoe is inspired by the first AJ1, offering fans of Jordan retros a chance to follow in the footsteps of greatness.</p>
-                    </div>
-                    <div className='detail-buttons'>
-                        <button id='addCart' onClick={this.props.dispatch({ type: 'HANDLE_CART', shoes: { name: shoesData.name, price: shoesData.price, check: true } })}>Add to Cart</button>
-                        <button id='addWish' onClick={this.props.dispatch({ type: 'HANDLE_LIKE', index: id })}>{this.props.dispatch({ type: 'LIKE_CLICKED', index: id })}</button>
-                    </div>
-                </div>
+
             </div>
 
         )
