@@ -31,10 +31,12 @@
     min-width: 20px;
     max-width: 25px;
     width: 3%;
+    cursor: pointer;
 }
 
 .card-cart span {
     align-self: flex-end;
+    cursor: pointer;
 }
 
 .cart-desc{
@@ -129,6 +131,7 @@
     color: white;
     min-height: 40px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .total-price {

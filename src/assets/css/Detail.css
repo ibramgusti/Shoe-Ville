@@ -19,11 +19,13 @@
 .detail-header svg {
     width: 25px;
     height: 25px;
+    cursor: pointer;
 }
 
 .cart-container{
     position: relative;
     width: fit-content;
+    cursor: pointer;
 }
 
 .cart-count{
@@ -79,7 +81,7 @@
 }
 
 .invert{
-    max-height: 50px;
+    max-height: fit-content;
     filter: invert(1);
     overflow-x: auto;
     padding-bottom: 15px;
@@ -117,12 +119,14 @@
     justify-content: center;
     flex-basis: 75%;
     max-width: 400px;
+    cursor: pointer;
     /* flex-grow: 3; */
 }
 
 #addWish{
     display: flex;
     align-items: center;
+    cursor: pointer;
     padding: 10px;
     /* flex-grow: 1; */
     /* flex-basis: 30%; */

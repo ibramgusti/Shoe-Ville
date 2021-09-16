@@ -68,12 +68,13 @@ form{
 
 .container-category{
     display: flex;
+    flex-wrap: wrap;
     color: white;
     margin-left: 8px;
 }
 
 .category-list{
-    margin : 0 8px;
+    margin : 5px 8px;
     font-weight: normal;
     font-size: 15px;
     border: 1px solid #FFFFFF;
@@ -134,6 +135,11 @@ form{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    cursor: pointer;
+}
+
+.allCards:hover{
+    box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
 }
 
 .allCards img{

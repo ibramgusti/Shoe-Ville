@@ -110,7 +110,12 @@
     flex-direction: column;
     border-radius: 26px;
     align-items: center;
+    cursor: pointer;
     justify-content: space-between;
+}
+
+.newCard:hover{
+    box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;  
 }
 
 .newCard img{
@@ -172,8 +177,13 @@
     padding: 0 16px;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
     border-radius: 26px;
     justify-content: space-between;
+}
+
+.bs-card:hover{
+    box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
 }
 
 .bs-card img{
@@ -381,6 +391,8 @@
         min-height: 208px;
         min-width: 351px;
     }
+
+    
 
     .newCard img{
         width: 333px;
