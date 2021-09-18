@@ -93,7 +93,7 @@
     align-items: flex-end;
     overflow: auto;
     overflow-y: clip;
-    min-height: 300px;
+    min-height: 310px;
     padding-bottom: 20px;
 }
 
@@ -162,7 +162,7 @@
     flex-direction: column;
     min-height: 385px;
     justify-content: space-between;
-    max-width: 1392px;
+    max-width: 1416px;
     margin: auto;
 }
 

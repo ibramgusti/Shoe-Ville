@@ -139,6 +139,11 @@ const GlobalProvider = (ChildrenComp) => {
                 }
 
                 if (action.type === 'HANDLE_CART') {
+                    const notif = () => {
+                        const notify = document.querySelector('.notif')
+                        notify.classList.add('enable')
+                        setTimeout(() => notify.classList.remove('enable'), 3000)
+                    }
                     const cart = () => {
                         let size = document.getElementById('sortOption').value
                         action.shoes.size = size
@@ -147,7 +152,9 @@ const GlobalProvider = (ChildrenComp) => {
                         this.setState({
                             cart: join
                         })
+                        notif()
                     }
+
                     return cart
                 }
 
@@ -192,6 +199,12 @@ const GlobalProvider = (ChildrenComp) => {
                     let yyyy = date.getFullYear();
                     let today = hrs + ':' + mnt + '/' + mm + '/' + dd + '/' + yyyy
 
+                    const notif = () => {
+                        const notify = document.querySelector('.notif')
+                        notify.classList.add('enable')
+                        setTimeout(() => notify.classList.remove('enable'), 3000)
+                    }
+
                     const addDate = () => {
                         let cart = this.state.cart.filter((el) => el.check)
 
@@ -224,6 +237,7 @@ const GlobalProvider = (ChildrenComp) => {
                             history: JSON.parse(localStorage.getItem('history')),
                             cart: JSON.parse(localStorage.getItem('cart')),
                         })
+                        notif()
                     }
                     return handleBuy
                 }

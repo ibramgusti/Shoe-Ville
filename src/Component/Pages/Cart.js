@@ -5,6 +5,7 @@ import React, { Component } from 'react'
 import { GlobalConsumer } from '../Context/Context'
 import { FaTrash } from "react-icons/fa";
 import HistoryBuy from '../Cart/HistoryBuy';
+import Notif from '../Detail/Notif';
 
 //style
 import '../../assets/css/Cart.css'
@@ -23,8 +24,13 @@ export class Cart extends Component {
     render() {
         let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
         let history = localStorage.getItem('history') ? JSON.parse(localStorage.getItem('history')) : []
+        let checker = arr => arr.some(el => el.check !== false)
+        let buttonColor = this.totalPrice() > 0 ? 'black' : 'grey'
+        let cursor = this.totalPrice() > 0 ? 'pointer' : 'default'
+
         return (
             <div className='cart-section'>
+                <Notif message="Terimaksih sudah berbelanja! :)" />
                 <div className='your-cart'>
                     <h3>Your Cart</h3>
 
@@ -58,7 +64,7 @@ export class Cart extends Component {
                             <p>Total</p>
                             <p>Rp. {this.totalPrice()}</p>
                         </div>
-                        <button onClick={this.props.dispatch({ type: 'HANDLE_BUY' })}>Buy it</button>
+                        <button disabled={!checker(cart)} onClick={this.props.dispatch({ type: 'HANDLE_BUY' })} style={{ background: buttonColor, cursor: cursor }}>Buy it</button>
                     </div>
                     <div className='list-history'>
                         <h4>Daftar Transaksi</h4>
