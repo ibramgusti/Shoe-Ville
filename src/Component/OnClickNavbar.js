@@ -16,7 +16,6 @@ const OnClickNavbar = (props) => {
             {
                 x.link.map((el, index) => {
                     return (
-                        // <Link to={el} key={index} onClick={() => this.props.dispatch({ type: 'HANDLE_CLICK_NAVIGATION' })}>{x.name[index]}</Link>
                         <Link to={el} key={index} onClick={() => props.dispatch({ type: 'HANDLE_CLICK_NAVIGATION' })}>{x.name[index]}</Link>
                     )
                 })

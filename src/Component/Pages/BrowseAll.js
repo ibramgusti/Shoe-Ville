@@ -17,7 +17,6 @@ export class BrowseAll extends Component {
 
     handleFilterSort = (e) => {
         let prices = this.props.state.shoes
-        console.log(this.props.state.filterSort);
         if (e.target.value === 'Cheapest') {
             prices.sort((a, b) => { return a.price - b.price })
             this.props.history.push('/browseAll')
@@ -38,8 +37,7 @@ export class BrowseAll extends Component {
     render() {
         return (
             <div className='browseAll'>
-                <Search handleFilter={this.handleFilterSort} />
-                {/* <Search /> */}
+                <Search />\
                 <div className='container-cards'>
                     <div className='wrap-cards'>
                         <ShoesCards handleDetail={this.handleDetail} />

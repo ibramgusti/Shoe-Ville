@@ -65,12 +65,19 @@ const GlobalProvider = (ChildrenComp) => {
                 }
                 if (action.type === 'HANDLE_SEARCH') {
                     const handleChange = (e) => {
-                        this.setState({
-                            search: e.target.value
-                        })
+                        if (document.getElementById('search-input').value === '') {
+                            this.setState({
+                                search: ''
+                            })
+                        } else {
+                            this.setState({
+                                search: e.target.value
+                            })
+                        }
                     }
                     return handleChange
                 }
+
                 if (action.type === 'HANDLE_SIGN') {
                     const handlesign = (e) => {
                         console.log(e);
@@ -103,14 +110,15 @@ const GlobalProvider = (ChildrenComp) => {
                             })
                         } else if (e.target.value === 'All') {
                             this.setState({
+                                sortedBrand: e.target.value,
                                 shoes: this.sourceShoes
                             })
                         } else {
                             this.setState({
                                 sortedBrand: e.target.value,
-                                shoes: this.sourceShoes.filter(val => {
-                                    return val.brand.indexOf(e.target.value) >= 0
-                                })
+                                shoes: this.sourceShoes.filter(val =>
+                                    val.brand.indexOf(e.target.value) >= 0
+                                )
                             })
                         }
                     }
@@ -130,7 +138,7 @@ const GlobalProvider = (ChildrenComp) => {
                     return handleLike
                 }
                 if (action.type === 'LIKE_CLICKED') {
-                    if (this.state.shoes[parseInt(action.index)].isLike) {
+                    if (this.sourceShoes[parseInt(action.index)].isLike) {
                         return <AiFillHeart />
                     } else {
                         return <AiOutlineHeart />

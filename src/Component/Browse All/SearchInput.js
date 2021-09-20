@@ -1,13 +1,14 @@
 import React from 'react'
 import { BiSearch } from "react-icons/bi";
+import { GlobalConsumer } from '../Context/Context';
 
 const SearchInput = (props) => {
     return (
         <form>
-            <input type='text' placeholder='Search Product...' onChange={props.handleChange} />
+            <input id='search-input' value={props.state.search} type='text' placeholder='Search Product...' onChange={props.handleChange} />
             <button id='searchButton'>{<BiSearch />}</button>
         </form>
     )
 }
 
-export default SearchInput
+export default GlobalConsumer(SearchInput)

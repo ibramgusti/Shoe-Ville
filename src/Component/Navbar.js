@@ -16,7 +16,6 @@ import Detail from './Pages/Detail';
 import Login from './Pages/Login'
 import Register from './Pages/Register'
 import Cart from './Pages/Cart';
-// import CartCount from './Detail/CartCount';
 
 //assets
 import logo from "../assets/img/logo.svg"
@@ -52,7 +51,6 @@ export class Navbar extends Component {
                             </ul>
                         </div>
                         <div className="nav-buttons">
-                            {/* <CartCount /> */}
                             <button className="active">Register</button>
                             <button >Login</button>
                         </div>

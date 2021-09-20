@@ -37,7 +37,7 @@ export class Detail extends Component {
 
     render() {
         const id = this.props.match.params.shoesID
-        const shoesData = this.props.state.shoes[id]
+        const shoesData = this.props.state.shoes.filter(el => el.id === parseInt(id))[0]
         return (
             <div className='container-detail' style={{ background: shoesData.bg }}>
                 <Notif message='Barangmu sudah masuk keranjang!' />

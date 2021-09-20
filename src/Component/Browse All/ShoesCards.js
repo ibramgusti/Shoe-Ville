@@ -20,8 +20,8 @@ export class ShoesCards extends Component {
                 return val.name.toLowerCase().includes(this.props.state.search.toLowerCase())
             }).map((el, index) => {
                 return (
-                    <div className='allCards' style={{ background: el.bg }} key={index} onClick={() => this.props.handleDetail(index)}>
-                        {this.props.dispatch({ type: 'LIKE_CLICKED', index: index })}
+                    <div className='allCards' style={{ background: el.bg }} key={index} onClick={() => this.props.handleDetail(el.id)}>
+                        {this.props.dispatch({ type: 'LIKE_CLICKED', index: el.id })}
                         <img src={`/shoes/${el.name}.png`} alt={el.name} />
                         <p className='shoesCategory'>{el.category}</p>
                         <h4>{el.name}</h4>
