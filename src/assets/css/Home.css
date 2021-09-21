@@ -11,10 +11,25 @@
 .container-jumbotron{
     max-height: 637px;
     position: relative;
-    background-color: #000000;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* background-color: #000000; */
+}
+
+.hero {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    transition: linear 0.5s ;
+    transform: scale(0.5);
+}
+
+.onScreen {
+    transform: scale(1);
+    transition: linear 0.5s ;
+    display: flex;
 }
 
 .title{
@@ -60,13 +75,46 @@
 .container-poItem{
     /* position: relative; */
     display: flex;
+    max-width: 720px;
+    min-width: 600px;
     flex-direction: column;
+}
+
+.slide{
+    position: absolute;
+    z-index: 10;
+    filter: invert(1);
+    min-width: 30px;
+    min-height: 30px;
+    cursor: pointer;
+    /* animation: slide, 1s; */
+    transition: all 0.3s linear;
+}
+
+.next{
+    right: 1%;
+    top: 45%;
+}
+
+.next:active{
+    right: 0.5%;
+}
+
+.prev{
+    left: 1%;
+    top: 45%;
+}
+
+.prev:active{
+    
+    left: 0.5%;
 }
 
 .container-poItem img {
     position: absolute;
     max-width: 940px;
-    left: 400px;
+    width: 50%;
+    left: 40%;
     transform: translate(30px, 70px);
 }
 
@@ -76,15 +124,15 @@
     font-size: 190px;
     color: #FFFFFF;
     opacity: 0.4;
-    transform: translate(-450px, 20px);
+    transform: translate(-65%, 20px);
 }
 
 .shoeName{
     font-weight: 500;
-    font-size: 142px;
+    font-size: 80px;
     margin: 0;
     color: #FFFFFF;
-    transform: translate(-120px, 50px);
+    transform: translate(-25%, 60%);
 }
 
 .cards{
@@ -253,17 +301,11 @@
 }
 
 @media screen and (max-width: 1375px) {
-    .container-poItem img{
-        width: 740px;
-    }
 
     .brandName{
         transform: translate(-350px, 20px);
     }
 
-    .container-poItem img{
-        transform: translate(60px, 100px);
-    }
     .shoeName{
         transform: translate(-120px, 30px);
         font-size: 130px;
@@ -271,17 +313,10 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .container-poItem img{
-        width: 520px;
-    }
 
     .brandName{
         font-size: 140px;
         transform: translate(-380px, -40px);
-    }
-
-    .container-poItem img{
-        transform: translate(60px, 50px);
     }
     .shoeName{
         transform: translate(-180px, 0px);
@@ -328,10 +363,6 @@
         transform: translate(-320px, -40px);
     }
 
-    .container-poItem img{
-        transform: translate(30px, 50px);
-    }
-
     .shoeName{
         transform: translate(-140px, 0px);
         font-size: 80px;
@@ -341,7 +372,7 @@
     .container-jumbotron{
         display: none;
     }
-
+    
     .on{
         display: block;
     }

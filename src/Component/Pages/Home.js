@@ -1,34 +1,70 @@
 //libraries
 import React, { Component } from 'react'
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 //component
-import PreorderDesc from '../Home/PreorderDesc'
-import PreorderItems from '../Home/PreorderItems'
+// import PreorderDesc from '../Home/PreorderDesc'
+// import PreorderItems from '../Home/PreorderItems'
 import NewCard from "../Home/NewCard";
 import { BestSeller } from '../Home/BestSeller';
 import { BrandList } from '../Home/BrandList';
 import Category from '../Browse All/Category';
 import { GlobalConsumer } from '../Context/Context';
+import { Hero } from '../Home/Hero';
 
 //style
 import '../../assets/css/Home.css'
 
 export class Home extends Component {
+
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            slides: 0
+        }
+    }
+
     handleClickck = (id) => {
-        this.props.history.push(`/detail/${id}`)
+        return this.props.history.push(`/detail/${id}`)
+    }
+
+    nextSlide = () => {
+        this.setState({
+            slides: this.state.slides === this.props.state.shoes.filter(val => val.po).length - 1 ? 0 : this.state.slides + 1
+        })
+    }
+
+    prevSlide = () => {
+        this.setState({
+            slides: this.state.slides === 0 ? this.props.state.shoes.filter(val => val.po).length - 1 : this.state.slides - 1
+        })
     }
 
     render() {
         const shoesData = this.props.state.shoes
+        const poShoes = shoesData.filter(val => val.po)
         return (
+
             <section id='home'>
                 <div className='container-jumbotron'>
-                    <div className='jumbotron'>
-                        <p className='title'>New Release !</p>
-                        <PreorderDesc handleClickPo={() => this.handleClickck(shoesData[shoesData.length - 1].id)} poDesc='Originally created for the hardwood, the Dunk later took to the streets—and as they say, the rest is history. ' poDate={shoesData[shoesData.length - 1].date} />
-                    </div>
-                    <PreorderItems brand={shoesData[shoesData.length - 1].brand} shoeName={shoesData[shoesData.length - 1].name} />
-
+                    <AiOutlineLeft className='slide prev' onClick={this.prevSlide} />
+                    <AiOutlineRight className='slide next' onClick={this.nextSlide} />
+                    {
+                        poShoes.map((el, index) => {
+                            return (
+                                <Hero
+                                    key={index}
+                                    classDiv={this.state.slides === index ? `hero onScreen` : `hero`}
+                                    bg={el.bg}
+                                    handleClickPo={() => this.handleClickck(el.id)}
+                                    poDate={el.date}
+                                    brand={el.brand}
+                                    shoesName={el.name}
+                                />
+                            )
+                        })
+                    }
                 </div>
                 <div className='container-release'>
                     <p className='title on'>New Release !</p>

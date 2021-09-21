@@ -37,7 +37,7 @@ export class BrowseAll extends Component {
     render() {
         return (
             <div className='browseAll'>
-                <Search />\
+                <Search />
                 <div className='container-cards'>
                     <div className='wrap-cards'>
                         <ShoesCards handleDetail={this.handleDetail} />
