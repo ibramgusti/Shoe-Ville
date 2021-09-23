@@ -34,6 +34,11 @@
     padding-inline-start: 0;
     margin: 0;
   }
+
+  .link-active {
+    text-decoration: underline !important;
+    font-weight: 500;
+  }
   
   .nav-links a{
     text-decoration: none;
@@ -48,6 +53,7 @@
     padding: 8px;
     margin: 0 16px;
   }
+
   
   .nav-buttons{
     display: flex;
@@ -55,18 +61,19 @@
     padding: 4px 8px
   }
   
-  .nav-buttons button{
+  .nav-buttons a{
+    text-decoration: none;
     padding: 8px 16px;
     background-color: white;
     border: 1px solid #000000;
     font-family: 'Poppins';
     margin: 0 12px;
-  /* box-sizing: border-box; */
     border-radius: 8px; 
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     cursor: pointer;
+    color: black;
   }
   
   .nav-buttons .active{

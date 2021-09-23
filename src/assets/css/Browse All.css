@@ -142,12 +142,18 @@ form{
     box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
 }
 
+.allCards img:hover{
+    transform: scale(1.05) rotate(-5deg);
+}
+
 .allCards img{
+    transition: all 0.5s ease;
     max-width: 164px;
     align-self: center;
     min-height: 140px;
     object-fit: contain;
 }
+
 .allCards svg {
     filter: invert(1);
     width: 22px;

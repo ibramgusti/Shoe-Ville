@@ -41,9 +41,18 @@ export class Home extends Component {
         })
     }
 
+    componentDidMount() {
+        this.interval = setInterval(this.nextSlide, 5000);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
+
     render() {
         const shoesData = this.props.state.shoes
         const poShoes = shoesData.filter(val => val.po)
+        // setTimeout(this.nextSlide, 5000)
         return (
 
             <section id='home'>
@@ -53,15 +62,17 @@ export class Home extends Component {
                     {
                         poShoes.map((el, index) => {
                             return (
-                                <Hero
-                                    key={index}
-                                    classDiv={this.state.slides === index ? `hero onScreen` : `hero`}
-                                    bg={el.bg}
-                                    handleClickPo={() => this.handleClickck(el.id)}
-                                    poDate={el.date}
-                                    brand={el.brand}
-                                    shoesName={el.name}
-                                />
+                                this.state.slides === index && (
+                                    <Hero
+                                        key={index}
+                                        classDiv={this.state.slides === index ? `hero onScreen` : `hero`}
+                                        bg={el.bg}
+                                        handleClickPo={() => this.handleClickck(el.id)}
+                                        poDate={el.date}
+                                        brand={el.brand}
+                                        shoesName={el.name}
+                                    />
+                                )
                             )
                         })
                     }

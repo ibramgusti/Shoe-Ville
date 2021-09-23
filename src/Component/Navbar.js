@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import { AiOutlineMenu } from "react-icons/ai";
 import { FaUserCircle } from "react-icons/fa";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink, Link } from "react-router-dom";
 import { GlobalConsumer } from "./Context/Context";
 
 // //pages
@@ -29,6 +29,11 @@ export class Navbar extends Component {
         }))
     }
 
+    navbarClick = () => {
+        const link = document.querySelectorAll('.nav-links a')
+        console.log(link);
+    }
+
     render() {
         return (
             <Router>
@@ -43,16 +48,16 @@ export class Navbar extends Component {
                         </div>
                         <div className="navigation">
                             <ul className="nav-links">
-                                <li><Link to='/men'>Men</Link></li>
-                                <li><Link to='/woman'>Woman</Link></li>
-                                <li> <Link to='/kid'>Kid</Link></li>
-                                <li><Link to='/browseAll'>Browse All</Link></li>
-                                <li><Link to='/aboutUs'>About Us</Link></li>
+                                <li><NavLink to='/men' activeClassName='link-active'>Men</NavLink></li>
+                                <li><NavLink to='/woman' activeClassName='link-active'>Woman</NavLink></li>
+                                <li> <NavLink to='/kid' activeClassName='link-active'>Kid</NavLink></li>
+                                <li><NavLink to='/browseAll' activeClassName='link-active'>Browse All</NavLink></li>
+                                <li><NavLink to='/aboutUs' activeClassName='link-active'>About Us</NavLink></li>
                             </ul>
                         </div>
                         <div className="nav-buttons">
-                            <button className="active">Register</button>
-                            <button >Login</button>
+                            <Link to='/register' className="active">Register</Link>
+                            <Link to='/login'>Login</Link>
                         </div>
                         <div className='profil-img'>
                             <FaUserCircle />

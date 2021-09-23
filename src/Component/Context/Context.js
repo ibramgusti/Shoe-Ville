@@ -34,7 +34,7 @@ const GlobalProvider = (ChildrenComp) => {
                 { id: 21, name: 'Overbreak Khaki', date: '13/04/2021', po: true, poLong: 30, brand: 'Nike', isLike: false, category: 'Lifestyle', price: 4345000, bg: 'linear-gradient( rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 100%), linear-gradient( #F0DBC1, #F0DBC1)' },
                 { id: 22, name: 'Zoom Letter Bro', date: '17/04/2021', po: true, poLong: 25, brand: 'Nike', isLike: false, category: 'Lifestyle', price: 2345000, bg: 'linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 100%), #F9B9C3' },
                 { id: 23, name: 'Kobe 5x Champ', date: '19/04/2021', po: true, poLong: 14, brand: 'Nike', isLike: false, category: 'Trining', price: 3345000, bg: 'linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 100%), #D2CCE6' },
-                { id: 24, name: 'Dunk Low', date: '14/04/2021', po: true, poLong: 7, brand: 'Nike', isLike: false, category: 'Lifestyle', price: 3645000, bg: 'black' },
+                { id: 24, name: 'Dunk Low', date: '14/04/2021', po: true, poLong: 7, brand: 'Nike', isLike: false, category: 'Lifestyle', price: 3645000, bg: 'linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 100%), #9FE6A0' },
             ]
             state = {
                 shoes: this.sourceShoes,

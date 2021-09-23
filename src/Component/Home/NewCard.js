@@ -9,6 +9,7 @@ function NewCard(props) {
             </div>
             <img src={`/shoes/${props.shoeName}.png`} alt={props.shoeName} />
             <p className='shoeName-new'>{props.shoeName}</p>
+            <p className='shoeName-new stack'>{props.shoeName}</p>
         </div>
     )
 }

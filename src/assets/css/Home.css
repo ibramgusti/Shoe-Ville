@@ -18,18 +18,17 @@
 }
 
 .hero {
-    display: none;
+    display: flex;
+    opacity: 0;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    transition: linear 0.5s ;
-    transform: scale(0.5);
 }
 
 .onScreen {
-    transform: scale(1);
-    transition: linear 0.5s ;
-    display: flex;
+    /* transition: all 0.5s ease ; */
+    transition-duration: 1s;
+    opacity: 1;
 }
 
 .title{
@@ -115,7 +114,9 @@
     max-width: 940px;
     width: 50%;
     left: 40%;
-    transform: translate(30px, 70px);
+    z-index: 2;
+    transform: translate(5%, 70px);
+    animation: slide-img 0.5s ease;
 }
 
 .brandName{
@@ -124,15 +125,30 @@
     font-size: 190px;
     color: #FFFFFF;
     opacity: 0.4;
-    transform: translate(-65%, 20px);
+    transform: translate(-65%, 5%);
+    animation: slide-brand 0.5s ease;
 }
 
 .shoeName{
+    position: relative;
     font-weight: 500;
+    text-align: center;
     font-size: 80px;
+    z-index: 1;
     margin: 0;
     color: #FFFFFF;
     transform: translate(-25%, 60%);
+    animation: slide-name 0.5s ease;
+    min-width: 600px;
+}
+
+.stroke{
+    z-index: 2;
+    position: absolute;
+    bottom: 18.3%;
+    -webkit-text-stroke-color: white;
+    -webkit-text-stroke-width: 1px;
+    color: transparent;
 }
 
 .cards{
@@ -166,10 +182,15 @@
     box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;  
 }
 
+.newCard img:hover{
+    transform: scale(1.05);
+}
+
 .newCard img{
     position: absolute;
     right: 10px;
     top: 30px;
+    transition: all .5s ease;
 }
 
 .card-header{
@@ -204,6 +225,15 @@
     font-size: 50px;
 }
 
+.stack{
+    z-index: 2;
+    position: absolute;
+    bottom: 8%;
+    -webkit-text-stroke-color: white;
+    -webkit-text-stroke-width: 1px;
+    color: transparent;
+}
+
 .bestSeller{
     padding: 0 12px;
     display: flex;
@@ -234,12 +264,17 @@
     box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
 }
 
+.bs-card img:hover{
+    transform: scale(1.02);
+}
+
 .bs-card img{
     position: absolute;
     top: -80px;
     left: 90px;
     overflow: visible;
     z-index: 2;
+    transition: all .5s ease;
 }
 
 .bsBrand{
@@ -290,6 +325,112 @@
     justify-content: space-between;
 }
 
+/* animation form brand text */
+@keyframes slide-brand {
+    from { 
+        opacity: 0;
+        transform: translate(-55%, 5%);
+    }
+    
+    to {
+        opacity: 0.4;
+        transform: translate(-65%, 5%);
+    }
+}
+@keyframes slide-brand-one {
+    from { 
+        opacity: 0;
+        transform: translate(-45%, 5%);
+    }
+    
+    to {
+        opacity: 0.4;
+        transform: translate(-55%, 5%);
+    }
+}
+@keyframes slide-brand-two {
+    from { 
+        opacity: 0;
+        transform: translate(-15%, 15%);
+    }
+    
+    to {
+        opacity: 0.4;
+        transform: translate(-25%, 15%);
+    }
+}
+
+/* animation form img hero text */
+@keyframes slide-img {
+    from { 
+        opacity: 0;
+        transform: translate(10%, 70px);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translate(5%, 70px);
+    }
+}
+@keyframes slide-img-one {
+    from { 
+        opacity: 0;
+        transform: translate(10%, 70px);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translate(5%, 70px);
+    }
+}
+@keyframes slide-img-two {
+    from { 
+        opacity: 0;
+        transform: translate(10%, 70px);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translate(5%, 70px);
+    }
+}
+
+
+/* animation form name shoes text */
+@keyframes slide-name {
+    from { 
+        opacity: 0;
+        transform: translate(-15%, 60%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-25%, 60%);
+    }
+}
+@keyframes slide-name-one {
+    from { 
+        opacity: 0;
+        transform: translate(0%, 60%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-10%, 60%);;
+    }
+}
+@keyframes slide-name-two {
+    from { 
+        opacity: 0;
+        transform: translate(10%, 120%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0%, 120%);
+    }
+}
+
 @media screen and (max-width: 1420px) {
     .cards{
         justify-content: flex-start;
@@ -303,29 +444,45 @@
 @media screen and (max-width: 1375px) {
 
     .brandName{
-        transform: translate(-350px, 20px);
+        transform: translate(-55%, 5%);
+        animation: slide-brand-one 0.5s ease ;
+    }
+    
+    .shoeName{
+        transform: translate(-10%, 60%);
+        font-size: 60px;
+        animation: slide-name-one 0.5s ease ;
     }
 
-    .shoeName{
-        transform: translate(-120px, 30px);
-        font-size: 130px;
+    .stroke{
+        bottom: 20.5%;
     }
 }
 
 @media screen and (max-width: 1200px) {
-
+    
     .brandName{
         font-size: 140px;
-        transform: translate(-380px, -40px);
+        transform: translate(-25%, 15%);
+        animation: slide-brand-two 0.5s ease ;
     }
     .shoeName{
-        transform: translate(-180px, 0px);
-        font-size: 80px;
+        transform: translate(0%, 120%);
+        animation: slide-name-two 0.5s ease ;
+        font-size: 50px;
+    }
+
+    .stroke{
+        bottom: 27.6%;
     }
 
     .shoeName-new, .bsShoe{
         font-size: 50px;
         /* line-height: 34px; */
+    }
+
+    .stack{
+        bottom: 9%;
     }
 
     .brandName-new, .bsBrand{
@@ -356,18 +513,6 @@
 
     }
 }
-
-@media screen and (max-width: 1100px) {
-    .brandName{
-        font-size: 140px;
-        transform: translate(-320px, -40px);
-    }
-
-    .shoeName{
-        transform: translate(-140px, 0px);
-        font-size: 80px;
-    }
-}
 @media screen and (max-width: 992px) {
     .container-jumbotron{
         display: none;
@@ -384,6 +529,10 @@
     .shoeName-new{
         font-size: 37px;
         line-height: 34px;
+    }
+
+    .stack {
+        bottom: 11%;
     }
 
     .bsShoe{
@@ -457,6 +606,10 @@
     .shoeName-new{
         font-size: 23px;
         line-height: 34px;
+    }
+
+    .stack {
+        bottom: 0%;
     }
 
     .brandName-new{
