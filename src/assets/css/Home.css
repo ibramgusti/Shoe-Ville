@@ -313,6 +313,7 @@
 .brandList img{
     max-width: 95px;
     margin-right: 22px;
+    cursor: pointer;
 }
 
 .categoryList{

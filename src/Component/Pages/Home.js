@@ -21,6 +21,7 @@ export class Home extends Component {
         super(props)
 
         this.state = {
+            shoes: [],
             slides: 0
         }
     }
@@ -42,6 +43,9 @@ export class Home extends Component {
     }
 
     componentDidMount() {
+        this.setState({
+            shoes: this.props.state.shoes
+        })
         this.interval = setInterval(this.nextSlide, 5000);
     }
 
@@ -50,9 +54,12 @@ export class Home extends Component {
     }
 
     render() {
-        const shoesData = this.props.state.shoes
+        // const shoesData = this.props.state.shoes
+        const shoesData = this.state.shoes
         const poShoes = shoesData.filter(val => val.po)
+
         // setTimeout(this.nextSlide, 5000)
+        // console.log(document.querySelectorAll('.brandList img'));
         return (
 
             <section id='home'>
@@ -86,7 +93,7 @@ export class Home extends Component {
                         })}
                     </div>
                 </div>
-                <BrandList />
+                <BrandList brandClick={(e) => this.props.history.push(`browseAll/${e.target.alt}`)} />
                 <div className='bestSeller'>
                     <p className='title'>Best Seller</p>
                     <div className='cards'>
@@ -99,7 +106,7 @@ export class Home extends Component {
                 </div>
                 <div className='categoryList'>
                     <p className='title'>Category</p>
-                    <Category calssdiv='invert' classList='invert-two' />
+                    <Category calssdiv='invert' classList='invert-two' clickcategory={(e) => this.props.history.push(`browseAll/${e.target.innerHTML}`)} />
                 </div>
             </section>
         )

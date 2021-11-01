@@ -70,7 +70,8 @@ export class Navbar extends Component {
                 <Route path='/men' component={Men} />
                 <Route path='/woman' component={Woman} />
                 <Route path='/kid' component={Kid} />
-                <Route path='/browseAll' component={BrowseAll} />
+                <Route exact path='/browseAll' component={BrowseAll} />
+                <Route path='/browseAll/:tagName' component={BrowseAll} />
                 <Route path='/aboutUs' component={AboutUs} />
                 <Route path='/login' component={Login} />
                 <Route path='/register' component={Register} />

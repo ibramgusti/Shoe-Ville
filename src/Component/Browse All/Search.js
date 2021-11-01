@@ -20,6 +20,16 @@ export class Search extends Component {
         })
     }
 
+    closePopUp = () => {
+        document.querySelector('.popUp-filter').style.transform = 'translate(0, 100%)'
+        document.querySelector('.popUp-bg').style.display = 'none'
+    }
+
+    openPopUp = () => {
+        document.querySelector('.popUp-filter').style.transform = 'translate(0, 0)'
+        document.querySelector('.popUp-bg').style.display = 'flex'
+    }
+
     render() {
         return (
             <div className='container-search'>
@@ -27,15 +37,34 @@ export class Search extends Component {
                 <div className='div-search'>
                     <SearchInput handleChange={this.props.dispatch({ type: 'HANDLE_SEARCH' })} />
                     <div className='filter'>
-                        <GoSettings />
+                        <GoSettings onClick={this.openPopUp} />
                     </div>
                 </div>
                 <div className='sorting'>
                     <SortOption sortBy={this.state.sortBy} filter={this.props.state.filterSort} handleFilter={this.props.dispatch({ type: 'HANDLE_SORT' })} />
-                    {/* <SortOption sortBy={this.state.sortBy} handleFilter={this.props.handleFilter} filter={this.props.state.filterSort} /> */}
                     <SortOption sortBy={this.state.brands} filter={this.props.state.sortedBrand} handleFilter={this.props.dispatch({ type: 'HANDLE_SORT_BRAND' })
                     } />
-                    <Category />
+                    <Category clickcategory={this.props.clickcategory} />
+                </div>
+
+                <div className='popUp-bg' onClick={this.closePopUp}></div>
+                <div className='popUp-filter'>
+                    <div className='filter-pop'>
+                        <p className='p-popUp'>Sort By :</p>
+                        <SortOption sortBy={this.state.sortBy} filter={this.props.state.filterSort} handleFilter={this.props.dispatch({ type: 'HANDLE_SORT' })} />
+                    </div>
+                    <div className='filter-pop'>
+                        <p className='p-popUp'>Brands :</p>
+                        <SortOption sortBy={this.state.brands} filter={this.props.state.sortedBrand} handleFilter={this.props.dispatch({ type: 'HANDLE_SORT_BRAND' })
+                        } />
+
+                    </div>
+                    <div className='filter-pop'>
+                        <p className='p-popUp'>Tags :</p>
+                        <Category clickcategory={this.props.clickcategory} calssdiv='invert' classList='invert-two' />
+                    </div>
+                    <div className='popUp-button'>
+                    </div>
                 </div>
             </div>
         )

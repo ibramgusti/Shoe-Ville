@@ -37,7 +37,7 @@ export class BrowseAll extends Component {
     render() {
         return (
             <div className='browseAll'>
-                <Search />
+                <Search clickcategory={this.props.dispatch({ type: 'HANDLE_CATEGORY', tag: this.props.match.params.tagName })} />
                 <div className='container-cards'>
                     <div className='wrap-cards'>
                         <ShoesCards handleDetail={this.handleDetail} />

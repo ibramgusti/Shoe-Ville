@@ -11,7 +11,7 @@ export const BrandList = (props) => {
                 {
                     brand.map((el, index) => {
                         return (
-                            <img src={`/brands/${el}.svg`} alt={el} key={index} />
+                            <img src={`/brands/${el}.svg`} alt={el} key={index} onClick={props.brandClick} />
                         )
                     })
                 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { GlobalConsumer } from '../Context/Context';
+import { AiOutlineClose } from "react-icons/ai";
 
 class Category extends Component {
     render() {
@@ -7,7 +8,10 @@ class Category extends Component {
             <div className={`container-category ${this.props.calssdiv}`}>
                 {this.props.state.category.map((el, index) => {
                     return (
-                        <div className={`category-list ${this.props.classList}`} key={index}>{el}</div>
+                        <div className={`category-list ${this.props.classList}`} key={index}>
+                            <p onClick={this.props.clickcategory}>{el}</p>
+                            <AiOutlineClose onClick={this.props.dispatch({ type: 'HANDLE_CLOSE_TAG' })} />
+                        </div>
                     )
                 })}
             </div>

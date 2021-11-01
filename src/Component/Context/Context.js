@@ -46,6 +46,7 @@ const GlobalProvider = (ChildrenComp) => {
                 cart: JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart')) : [],
                 sortedBrand: '',
                 filterSort: '',
+                tags: '',
                 category: ['Lifestyle', 'Running', 'Basket', 'Training', 'Low Top', 'High Top'],
                 visible: false,
                 search: '',
@@ -88,16 +89,16 @@ const GlobalProvider = (ChildrenComp) => {
                 if (action.type === 'HANDLE_SORT') {
                     const handleSort = (e) => {
                         const filter = e.target.value
-                        this.setState((state) => ({
+                        this.setState({
                             filterSort: filter,
-                            shoes: this.state.shoes.slice().sort((a, b) =>
+                            shoes: this.sourceShoes.slice().sort((a, b) =>
                                 filter === 'Cheapest' ?
                                     ((a.price > b.price) ? 1 : -1) :
                                     filter === 'Most Expensive' ?
                                         ((a.price < b.price) ? 1 : -1) :
                                         ((a.id > b.id) ? 1 : -1)
                             )
-                        }))
+                        })
                     }
                     return handleSort
                 }
@@ -110,19 +111,65 @@ const GlobalProvider = (ChildrenComp) => {
                             })
                         } else if (e.target.value === 'All') {
                             this.setState({
-                                sortedBrand: e.target.value,
-                                shoes: this.sourceShoes
+                                sortedBrand: '',
+                                shoes: this.state.tags !== '' ? this.sourceShoes.filter(val => val.category.indexOf(this.state.tags) >= 0) : this.sourceShoes
                             })
                         } else {
                             this.setState({
                                 sortedBrand: e.target.value,
-                                shoes: this.sourceShoes.filter(val =>
-                                    val.brand.indexOf(e.target.value) >= 0
-                                )
+                                // shoes: this.sourceShoes.filter(val =>
+                                //     val.brand.indexOf(e.target.value) >= 0
+                                shoes: this.state.tags !== '' ? this.sourceShoes.filter(val =>
+                                    val.brand.indexOf(e.target.value) >= 0 && val.category.indexOf(this.state.tags) >= 0) :
+                                    this.sourceShoes.filter(val =>
+                                        val.brand.indexOf(e.target.value) >= 0
+                                    )
                             })
                         }
                     }
                     return handleSortBrand
+                }
+
+                if (action.type === 'HANDLE_CATEGORY') {
+                    const handleCategory = (e) => {
+                        const tags = Object.values(document.querySelectorAll('.category-list'))
+                        tags.map(el => {
+                            return el.innerText === e.target.innerHTML ? el.classList.add('tagOn') : el.classList.remove('tagOn')
+                            // return el.innerText === e.target.innerHTML ? console.log(e.target.innerHTML) : el.classList.remove('tagOn')
+                        })
+                        this.setState({
+                            tags: e.target.innerText
+                        }, () => this.setState({
+                            shoes: this.state.sortedBrand !== '' ? this.sourceShoes.filter(val => val.category.indexOf(e.target.innerText) >= 0 && val.brand.indexOf(this.state.sortedBrand) >= 0) : this.sourceShoes.filter(val => val.category.indexOf(e.target.innerText) >= 0)
+                        }))
+                    }
+
+                    return handleCategory
+                }
+
+                if (action.type === 'HANDLE_CLOSE_TAG') {
+                    const handleCloseTag = () => {
+                        const tags = Object.values(document.querySelectorAll('.category-list'))
+                        tags.map(el => el.classList.remove('tagOn'))
+                        this.setState({
+                            tags: '',
+                            shoes: this.state.sortedBrand !== '' ? this.sourceShoes.filter(val => val.brand.indexOf(this.state.sortedBrand) >= 0) : this.sourceShoes
+                        })
+                    }
+
+                    return handleCloseTag
+                }
+
+                if (action.type === 'CLOSE_POPUP') {
+                    const closePopup = () => {
+                        this.setState({
+                            shoes: this.sourceShoes,
+                            sortedBrand: '',
+                            filterSort: '',
+                            tags: '',
+                        })
+                    }
+                    return closePopup
                 }
 
 
